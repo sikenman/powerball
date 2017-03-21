@@ -1,4 +1,8 @@
-﻿using System;
+/// <author>Siken Man Singh Dongol</author>
+/// <datecreated>3/20/2017</datecreated>
+/// <summary>Console application to generate 128 set of random PowerBall numbers</summary>
+
+using System;
 using System.Threading;
 
 namespace ConsolePowerBall
