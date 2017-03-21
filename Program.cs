@@ -14,14 +14,13 @@ namespace ConsolePowerBall
             const int NO_OF_DRAWS = 128;
 
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine();
 
             for (int i = 1; i <= NO_OF_DRAWS; i++)
             {
                 PowerBall p = new PowerBall();
 
                 // Generate 5 unique white balls
-                for (int j = 1; j < 6;)
+                for (int j = 1; j <= 5;)
                 {
                     int no = p.getWhiteNumber();
                     if (no != -1) j++;
@@ -41,7 +40,6 @@ namespace ConsolePowerBall
             }
             Console.WriteLine("Press any key to close the program.");
             Console.ReadKey();
-
         }
     }
 
@@ -61,7 +59,7 @@ namespace ConsolePowerBall
         public int getWhiteNumber()
         {
             Random rnd = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
-            Thread.Sleep(7);
+            Thread.Sleep(3);
 
             int number = rnd.Next(1, 69);
             bool R = addWhiteNo(number);
@@ -95,7 +93,7 @@ namespace ConsolePowerBall
         public int getPowerBall()
         {
             Random rnd = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
-            Thread.Sleep(55);
+            Thread.Sleep(18);
 
             int number = rnd.Next(1, 26);
             powerRed = number;
@@ -113,10 +111,8 @@ namespace ConsolePowerBall
             Console.ForegroundColor = ConsoleColor.White;
             for (int n = 0; n < 5; n++)
             {
-
                 Console.Write(powerWhite[n].ToString().PadLeft(2));
                 Console.Write(" ");
-
             }
         }
 
