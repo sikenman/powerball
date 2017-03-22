@@ -5,16 +5,21 @@
 using System;
 using System.Threading;
 
-namespace ConsolePowerBall
+namespace ConAppPowerBall
 {
     class Program
     {
         static void Main(string[] args)
         {
-            const int NO_OF_DRAWS = 128;
+            UInt16 NO_OF_DRAWS = 16;
+            if (args.Length == 1)
+            {
+                NO_OF_DRAWS = UInt16.Parse(args[0]);
+            }
 
             Console.BackgroundColor = ConsoleColor.Black;
 
+            Console.WriteLine("Start Time: " + DateTime.Now);
             for (int i = 1; i <= NO_OF_DRAWS; i++)
             {
                 PowerBall p = new PowerBall();
@@ -29,6 +34,7 @@ namespace ConsolePowerBall
                 // Generate 1 RED ball
                 p.getPowerBall();
 
+                //Console.SetCursorPosition(5, 5);
                 // Sort Array
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write(i.ToString().PadLeft(3) + " | ");
@@ -38,6 +44,7 @@ namespace ConsolePowerBall
                 p.showRedBall();
 
             }
+            Console.WriteLine("End Time: " + DateTime.Now);
             Console.WriteLine("Press any key to close the program.");
             Console.ReadKey();
         }
@@ -93,7 +100,7 @@ namespace ConsolePowerBall
         public int getPowerBall()
         {
             Random rnd = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
-            Thread.Sleep(18);
+            Thread.Sleep(15);
 
             int number = rnd.Next(1, 26);
             powerRed = number;
