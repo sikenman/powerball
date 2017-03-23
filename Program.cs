@@ -44,11 +44,11 @@ namespace ConsolePowerBall
                 p.showWhiteBalls();
                 p.showRedBall();
 
-                Thread.Sleep(12);
+                Thread.Sleep(2);
             }
 
             Console.WriteLine(startTime);
-            Console.WriteLine("End Time: " + DateTime.Now);
+            Console.WriteLine("  End Time: " + DateTime.Now);
             Console.WriteLine("Press any key to close the program.");
             Console.ReadKey();
         }
