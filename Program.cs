@@ -11,7 +11,7 @@ namespace ConAppPowerBall
     {
         static void Main(string[] args)
         {
-            UInt16 NO_OF_DRAWS = 16;
+            UInt16 NO_OF_DRAWS = 128;
             if (args.Length == 1)
             {
                 NO_OF_DRAWS = UInt16.Parse(args[0]);
