@@ -8,4 +8,6 @@ C# console application to generate random PowerBall numbers.
 C:/>ConsolePowerBall.exe >> PowerBall.txt
 
 # Generating 512 random PowerBall numbers and sending output to the text file
+Syntax: C:/>ConsolePowerBall [n] where n is between 1 and 65535.
+
 C:/>ConsolePowerBall 512 >> PowerBall512.txt
