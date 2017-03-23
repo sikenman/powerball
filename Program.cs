@@ -1,12 +1,12 @@
-/// <author>Siken Man Singh Dongol</author>
-/// <datecreated>3/20/2017</datecreated>
-/// <summary>Console application to generate 128 set of random PowerBall numbers</summary>
-
 using System;
 using System.Threading;
 
-namespace ConAppPowerBall
+namespace ConsolePowerBall
 {
+    /// <author>Siken Man Singh Dongol</author>
+    /// <datecreated>3/20/2017</datecreated>
+    /// <summary>Console application to generate 128 set of random PowerBall numbers</summary>
+    /// 
     class Program
     {
         static void Main(string[] args)
@@ -19,7 +19,8 @@ namespace ConAppPowerBall
 
             Console.BackgroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Start Time: " + DateTime.Now);
+            string startTime = "Start Time: " + DateTime.Now;
+
             for (int i = 1; i <= NO_OF_DRAWS; i++)
             {
                 PowerBall p = new PowerBall();
@@ -43,7 +44,10 @@ namespace ConAppPowerBall
                 p.showWhiteBalls();
                 p.showRedBall();
 
+                Thread.Sleep(12);
             }
+
+            Console.WriteLine(startTime);
             Console.WriteLine("End Time: " + DateTime.Now);
             Console.WriteLine("Press any key to close the program.");
             Console.ReadKey();
@@ -66,9 +70,8 @@ namespace ConAppPowerBall
         public int getWhiteNumber()
         {
             Random rnd = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
-            Thread.Sleep(3);
 
-            int number = rnd.Next(1, 69);
+            int number = rnd.Next(1, 70);
             bool R = addWhiteNo(number);
 
             if (R)
@@ -100,9 +103,8 @@ namespace ConAppPowerBall
         public int getPowerBall()
         {
             Random rnd = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
-            Thread.Sleep(15);
 
-            int number = rnd.Next(1, 26);
+            int number = rnd.Next(1, 27);
             powerRed = number;
 
             return number;
