@@ -21,10 +21,10 @@ namespace ConsolePowerBall
 
             string startTime = "Start Time: " + DateTime.Now;
 
+            PowerBall p = new PowerBall();
+
             for (int i = 1; i <= NO_OF_DRAWS; i++)
             {
-                PowerBall p = new PowerBall();
-
                 // Generate 5 unique white balls
                 for (int j = 1; j <= 5;)
                 {
@@ -44,7 +44,8 @@ namespace ConsolePowerBall
                 p.showWhiteBalls();
                 p.showRedBall();
 
-                Thread.Sleep(2);
+                Thread.Sleep(3);
+                p.reset();
             }
 
             Console.WriteLine(startTime);
@@ -99,7 +100,7 @@ namespace ConsolePowerBall
             }
             return result;
         }
-
+        
         public int getPowerBall()
         {
             Random rnd = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
@@ -129,6 +130,12 @@ namespace ConsolePowerBall
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(powerRed.ToString().PadLeft(2));
+        }
+
+        internal void reset()
+        {
+            counter = 0;
+            powerRed = 0;
         }
     }
 }
